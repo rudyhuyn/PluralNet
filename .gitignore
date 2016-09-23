@@ -1,0 +1,5 @@
+obj/
+bin/
+*.nuspec
+*.user
+project.lock.json

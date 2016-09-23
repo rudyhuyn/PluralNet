@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D1D6DB6C-CF0E-495C-900A-700E43FB9CD5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Huyn.Localizator</RootNamespace>
+    <AssemblyName>Huyn.Localizator</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Converters\PluralConverter.cs" />
+    <Compile Include="Providers\DanishProvider.cs" />
+    <Compile Include="Providers\OneOrZeroToOneExcludedProvider.cs" />
+    <Compile Include="Providers\SinhalaProvider.cs" />
+    <Compile Include="Providers\IntOneOrZeroProvider.cs" />
+    <Compile Include="Providers\WelshProvider.cs" />
+    <Compile Include="Providers\MalteseProvider.cs" />
+    <Compile Include="Providers\MacedonianProvider.cs" />
+    <Compile Include="Providers\BreizhProvider.cs" />
+    <Compile Include="Providers\CentralAtlasTamazightProvider.cs" />
+    <Compile Include="Providers\FilipinoProvider.cs" />
+    <Compile Include="Providers\IcelandicProvider.cs" />
+    <Compile Include="Providers\ManxProvider.cs" />
+    <Compile Include="Providers\OneOrTwoProvider.cs" />
+    <Compile Include="Providers\OneOrZeroProvider.cs" />
+    <Compile Include="Providers\CroatProvider.cs" />
+    <Compile Include="Providers\ScottishGaelicProvider.cs" />
+    <Compile Include="Providers\TachelhitProvider.cs" />
+    <Compile Include="ResourceLoaderExtension.cs" />
+    <Compile Include="Providers\ZeroToOneProvider.cs" />
+    <Compile Include="Providers\HebrewProvider.cs" />
+    <Compile Include="Providers\ArabicProvider.cs" />
+    <Compile Include="Providers\CzechProvider.cs" />
+    <Compile Include="Interfaces\IPluralProvider.cs" />
+    <Compile Include="Providers\OtherProvider.cs" />
+    <Compile Include="Providers\PolishProvider.cs" />
+    <Compile Include="Providers\LithuanianProvider.cs" />
+    <Compile Include="Providers\IrishProvider.cs" />
+    <Compile Include="Providers\LatvianProvider.cs" />
+    <Compile Include="Utils\IntExt.cs" />
+    <Compile Include="Utils\PluralHelper.cs" />
+    <Compile Include="PluralTypeEnum.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ZeroToTwoExcludedProvider.cs" />
+    <Compile Include="Providers\OnlyOneProvider.cs" />
+    <Compile Include="Providers\RomanianProvider.cs" />
+    <Compile Include="Providers\SlavicProvider.cs" />
+    <Compile Include="Providers\SlovenianProvider.cs" />
+    <Compile Include="Utils\DecimalExt.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="project.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
