@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PluralNet.Shared", "PluralNet.Shared\PluralNet.Shared.shproj", "{1CEE422A-F0FC-4D54-B606-5F942C8F6159}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralNet.WinRT", "PortalNet.WinRT\PluralNet.WinRT.csproj", "{26C68EEB-B24A-4BCF-943A-A46C3E76A144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralNet.WinRT", "PluralNet.WinRT\PluralNet.WinRT.csproj", "{26C68EEB-B24A-4BCF-943A-A46C3E76A144}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluralNet.SilverlightPhone", "PluralNet.SilverlightPhone\PluralNet.SilverlightPhone.csproj", "{F0CE0FCD-9784-4999-AFAB-E411D61F65FC}"
 EndProject
