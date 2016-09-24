@@ -8,8 +8,8 @@
     <ProjectGuid>{26C68EEB-B24A-4BCF-943A-A46C3E76A144}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PluralNet.WinRT</RootNamespace>
-    <AssemblyName>PluralNet.WinRT</AssemblyName>
+    <RootNamespace>PluralNet</RootNamespace>
+    <AssemblyName>PluralNet</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

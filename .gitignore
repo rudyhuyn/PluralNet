@@ -2,4 +2,6 @@ obj/
 bin/
 *.nuspec
 *.user
+*.suo
+*.nupkg
 project.lock.json

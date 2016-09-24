@@ -10,7 +10,7 @@ using Huyn.PluralNet.Utils;
 using Huyn.PluralNet.Interfaces;
 
 
-namespace Huyn.PluralNet
+namespace Huyn.PluralNet.Providers
 {
     public class WelshProvider : IPluralProvider
     {

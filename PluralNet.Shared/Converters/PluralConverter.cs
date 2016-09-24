@@ -13,7 +13,7 @@ using System.Windows.Data;
 using System.Resources;
 #endif
 
-namespace Huyn.Localizator.Converters
+namespace Huyn.PluralNet.Converters
 {
     public class PluralConverter : IValueConverter
     {
