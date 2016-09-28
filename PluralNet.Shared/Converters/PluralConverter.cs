@@ -32,7 +32,7 @@ namespace Huyn.PluralNet.Converters
             if (string.IsNullOrWhiteSpace(key))
                 return "";
             var number = (decimal)value;
-            return ResourceManager.GetPlural(key, number);
+            return string.Format(ResourceManager.GetPlural(key, number),number);
         }
 #endif
 #if WINRT
@@ -43,7 +43,7 @@ namespace Huyn.PluralNet.Converters
                 return "";
             var number = (decimal)value;
             var resource = ResourceLoader.GetForCurrentView();
-            return resource.GetPlural(key, number);
+            return string.Format(resource.GetPlural(key, number),number);
         }
 #endif
 
