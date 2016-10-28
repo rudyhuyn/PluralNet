@@ -1,14 +1,12 @@
 ﻿#if WINRT || SILVERLIGHT
-using Huyn.PluralNet;
+
 using System;
 using System.Globalization;
 
 #if WINRT
 using Windows.ApplicationModel.Resources;
 using Windows.UI.Xaml.Data;
-#endif
-
-#if SILVERLIGHT
+#elif SILVERLIGHT
 using System.Windows.Data;
 using System.Resources;
 #endif
@@ -17,8 +15,6 @@ namespace Huyn.PluralNet.Converters
 {
     public class PluralConverter : IValueConverter
     {
-
-
 #if SILVERLIGHT
         public ResourceManager ResourceManager { get; set; }
 
@@ -28,30 +24,34 @@ namespace Huyn.PluralNet.Converters
             {
                 throw new NullReferenceException("PluralConverter.ResourceManager can't be null");
             }
-            var key = parameter as string;
-            if (string.IsNullOrWhiteSpace(key))
-                return "";
-            var number = (decimal)value;
-            return string.Format(ResourceManager.GetPlural(key, number),number);
-        }
-#endif
-#if WINRT
+#elif WINRT
+
         public object Convert(object value, Type targetType, object parameter, string language)
-          {
+        {
+            var culture = !string.IsNullOrWhiteSpace(language) ? new CultureInfo(language) : null;
+#endif
             var key = parameter as string;
+
             if (string.IsNullOrWhiteSpace(key))
-                return "";
-            var number = (decimal)value;
+            {
+                return string.Empty;
+            }
+
+            var number = System.Convert.ToDecimal(value);
+
+#if SILVERLIGHT
+            var pluralFormat = ResourceManager.GetPlural(key, number);
+#elif WINRT
             var resource = ResourceLoader.GetForCurrentView();
-            return string.Format(resource.GetPlural(key, number),number);
-        }
+            var pluralFormat = resource.GetPlural(key, number);
 #endif
 
+            return string.Format(culture, pluralFormat, number);
+        }
 
 #if SILVERLIGHT || DESKTOP
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-#endif
-#if WINRT
+#elif WINRT
         public object ConvertBack(object value, Type targetType, object parameter, string language)
 #endif
         {
@@ -59,4 +59,5 @@ namespace Huyn.PluralNet.Converters
         }
     }
 }
+
 #endif
