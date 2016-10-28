@@ -28,7 +28,7 @@ In order to use the correct plural rules, the library needs to know the language
 To do that, you need to add an extra entry in your RESW file (if not already done by Visual Studio):
 
 
-* __ResourceLanguage__	fr_FR
+* __ResourceLanguage__	fr-FR
 
 # Manage plural forms code-behind
 
