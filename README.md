@@ -24,6 +24,8 @@ Polish (4 plural forms)
 * __TimestampMonth_Many__	{0} miesięcy temu
 * __TimestampMonth_Other__	{0} miesiąca temu
 
+## Silverlight only:
+
 In order to use the correct plural rules, the library needs to know the language used by the app and not by the system (for example a polish phone displaying an english application need to use the english rule instead of polish).
 To do that, you need to add an extra entry in your RESW file (if not already done by Visual Studio):
 
