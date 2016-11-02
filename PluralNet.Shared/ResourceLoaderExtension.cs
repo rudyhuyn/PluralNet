@@ -16,6 +16,7 @@ namespace Huyn.PluralNet
     public static class ResourceLoaderExtension
     {
         private static IPluralProvider _pluralProvider;
+        private static object _objLock = new object();
 
 #if WINRT
         public static string GetPlural(this ResourceLoader resource, string key, decimal number)
@@ -27,7 +28,31 @@ namespace Huyn.PluralNet
 
             if (_pluralProvider == null)
             {
-                _pluralProvider = PluralHelper.GetPluralChooser(new CultureInfo(resource.GetString("ResourceLanguage")));
+                lock (_objLock)
+                {
+                    if (_pluralProvider == null)
+                    {
+                        CultureInfo cultureToUse = null;
+                        var forcedCulture = resource.GetString("ResourceLanguage");
+                        if (!string.IsNullOrEmpty(forcedCulture))
+                        {
+                            try
+                            {
+                                cultureToUse = new CultureInfo(forcedCulture);
+                            }
+                            catch
+                            {
+                                cultureToUse = new CultureInfo(CultureInfo.CurrentUICulture.Name);
+                            }
+                        }
+                        else
+                        {
+                            cultureToUse = new CultureInfo(CultureInfo.CurrentUICulture.Name);
+                        }
+
+                        _pluralProvider = PluralHelper.GetPluralChooser(cultureToUse);
+                    }
+                }
             }
             string selectedSentence = null;
             var pluralType = _pluralProvider.ComputePlural(number);
