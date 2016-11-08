@@ -93,7 +93,7 @@ Afrikaans, Akan, Albanian, Amharic, Arabic, Armenian, Assamese, Asturian, Asu, A
 
 # How to help?
 
-If you detect an issue, want to add a language, don't hesitate to submit a push request!
+If you detect an issue, want to add a language, don't hesitate to submit a pull request!
 
 # more info
 
