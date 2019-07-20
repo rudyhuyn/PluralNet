@@ -1,5 +1,9 @@
 <img src="https://user-images.githubusercontent.com/1226538/56482774-c119ec00-647a-11e9-9d29-c010736c4981.png" height="80" />
 
+# Note
+
+__PluralNet is now deprecated, all features from PluralNet are now part of a more advanced toolset created by the same team, named ReswPlus: https://github.com/rudyhuyn/reswplus__
+
 # PluralNet - Pluralization for Resx and Resw files
 
 __PluralNet__ adds support of pluralization and plural forms to your application. Very easy to use and compatible with RESW and RESX files.
