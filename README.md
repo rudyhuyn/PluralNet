@@ -1,8 +1,8 @@
 <img src="https://user-images.githubusercontent.com/1226538/56482774-c119ec00-647a-11e9-9d29-c010736c4981.png" height="80" />
 
-# Note
+# Important
 
-__PluralNet is now deprecated, all features from PluralNet are now part of a more advanced toolset created by the same team, named ReswPlus: https://github.com/rudyhuyn/reswplus__
+__PluralNet is now deprecated, all features from PluralNet are now part of a more advanced toolset created/managed by the same team, named ReswPlus: https://github.com/dotnetplus/reswplus__
 
 # PluralNet - Pluralization for Resx and Resw files
 
