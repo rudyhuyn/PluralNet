@@ -5,3 +5,6 @@ bin/
 *.suo
 *.nupkg
 project.lock.json
+.cr/
+.vs/
+UpgradeLog.htm
