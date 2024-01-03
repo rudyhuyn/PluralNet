@@ -2,9 +2,11 @@
  * Huyn.PluralNet
  * Author  Rudy Huyn (6Studio)
  * License MIT / http://bit.ly/mit-license
- * 
+ *
  * Version 1.00
  */
+
+using System;
 
 namespace Huyn.PluralNet.Utils
 {
@@ -26,7 +28,11 @@ namespace Huyn.PluralNet.Utils
 
         public static uint GetNumberOfDigitsAfterDecimal(this decimal number)
         {
-            return (uint)((number - (int)number).ToString()).Length - 2;
+            var text = number.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            var decpoint = text.IndexOf('.');
+            if (decpoint < 0)
+                return 0;
+            return (uint)(text.Length - decpoint - 1);
         }
 
 
@@ -34,9 +40,12 @@ namespace Huyn.PluralNet.Utils
         {
             try
             {
-                //need optimization
-                var str = ((number - (int)number).ToString()).Substring(2);
-                if (str == "")
+                var text = number.ToString(System.Globalization.CultureInfo.InvariantCulture);
+                var decpoint = text.IndexOf('.');
+                if (decpoint < 0)
+                    return 0;
+                var str = text.Substring(decpoint + 1);
+                if (str == String.Empty)
                     return 0;
                 return long.Parse(str);
             }
